@@ -23,6 +23,7 @@
     </div>
     <audio id="bgMusic" src="images/imperfect_for_you.mp3" volume="0.05" loop></audio>
     <div id="wrapper" style="display: none;">
+        <div class="starField" aria-hidden="true"></div>
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left" >
             <img src="./images/1.png" alt="" width="350" class="flag__right">
@@ -69,7 +70,7 @@
             <div class="right">
                 <div class="box__account">
                     <div class="image">
-                        <img src="./images/unnamed.jpg" alt="">
+                        <img src="./images/unnamed.png" alt="">
                     </div>
                     <div class="name">
                         <i class="fa-solid fa-heart"></i>
@@ -106,7 +107,7 @@
             <div class="boxMail-container">
                 <div class="card1">
                     <div class="userImg">
-                        <img src="images/unnamed.jpg" alt="">
+                        <img src="images/unnamed.png" alt="">
                     </div>
                     <h4 class="username">Para: Karla 💖<span class="underline"></span></h4>
 
@@ -127,7 +128,7 @@
                             No necesito conocerte de toda una vida para saber lo que siento. Hay miradas que bastan,
                             palabras que sellan destinos, y corazones que se eligen sin preguntar.
                             Y el mío, mi vida, te eligió a ti.
-                            Feliz cumpleaños, mi Karla ❤️
+                            Feliz cumpleaños, mi Karla 🌻
                             Que este día sea tan hermoso como tú, y que la vida nos dé tiempo, mucho tiempo, para amarnos
                             sin prisa… pero sin final.
                         </h2>
@@ -142,6 +143,18 @@
     </div>
 
 <script>
+const starField = document.querySelector('.starField');
+for (let i = 0; i < 40; i++) {
+    const star = document.createElement('span');
+    star.className = 'tiny-star';
+    const size = (Math.random() * 8 + 6).toFixed(2);
+    star.style.setProperty('--size', `${size}px`);
+    star.style.setProperty('--left', `${(Math.random() * 100).toFixed(2)}%`);
+    star.style.setProperty('--top', `${(Math.random() * 100).toFixed(2)}%`);
+    star.style.setProperty('--delay', `${(Math.random() * 2.8).toFixed(2)}s`);
+    starField.appendChild(star);
+}
+
 document.getElementById("startButton").addEventListener("click", () => {
     // Reproduce la música
     const music = document.getElementById("bgMusic");
@@ -158,7 +171,7 @@ document.getElementById("startButton").addEventListener("click", () => {
 </body>
 <script>
     let datetxt = "29 Agosto";
-    let datatxtletter = "Hoy celebro tu vida, Karla… y aunque el tiempo que compartimos no sea tan largo como quisiera, siento que en cada instante contigo el universo se detiene un poco, como si el destino hubiese querido tomarse un respiro para mirarte también. Eres la calma en mi caos, la razón detrás de mis pensamientos más dulces, y la promesa que quiero cumplir todos los días: la de quedarme, cuidarte y amarte, sin medida ni final. No necesito conocerte de toda una vida para saber lo que siento. Hay miradas que bastan, palabras que sellan destinos, y corazones que se eligen sin preguntar. Y el mío, mi vida, te eligió a ti. Feliz cumpleaños, mi Karla ❤️. Que este día sea tan hermoso como tú, y que la vida nos dé tiempo, mucho tiempo, para amarnos sin prisa… pero sin final.";
+    let datatxtletter = "Hoy celebro tu vida, Karla… y aunque el tiempo que compartimos no sea tan largo como quisiera, siento que en cada instante contigo el universo se detiene un poco, como si el destino hubiese querido tomarse un respiro para mirarte también. Eres la calma en mi caos, la razón detrás de mis pensamientos más dulces, y la promesa que quiero cumplir todos los días: la de quedarme, cuidarte y amarte, sin medida ni final. No necesito conocerte de toda una vida para saber lo que siento. Hay miradas que bastan, palabras que sellan destinos, y corazones que se eligen sin preguntar. Y el mío, mi vida, te eligió a ti. Feliz cumpleaños, mi Karla 🌻. Que este día sea tan hermoso como tú, y que la vida nos dé tiempo, mucho tiempo, para amarnos sin prisa… pero sin final.";
     let titleLetter = "Para ti:";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
@@ -187,75 +200,12 @@ document.getElementById("startButton").addEventListener("click", () => {
     var intervalContent;
     var intervalTitle;
     $("#btn__letter").on("click", function () {
-        $(".box__letter").slideDown()
-        setTimeout(function () {
-            $(".letter__border").slideDown();
-        }, 1000)
-        setTimeout(function () {
-            intervalTitle = setInterval(function () {
-                if (currentIndexTitle < charArrTitle.length) {
-                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
-                    let i = document.createElement("i");
-                    i.className = "fa-solid fa-heart"
-                    document.querySelector(".title__letter").appendChild(i)
-                    currentIndexTitle++;
-                }
-                else {
-                    clearInterval(intervalTitle)
-                }
-            }, 100)
-        }, 2000)
-        setTimeout(function () {
-            document.querySelector("#heart__letter").classList.add("animationOp");
-            document.querySelector(".love__img").classList.add("animationOp");
-            document.querySelector("#mewmew").classList.add("animationOp");
-        }, 2800)
-        setTimeout(function () {
-            document.querySelectorAll(".heart").forEach((item) => {
-                item.classList.add("animation")
-            })
-        }, 3500)
-        setTimeout(function () {
-            intervalContent = setInterval(function () {
-                if (currentIndexLetter < charArrDateLetter.length) {
-                    text__letter.textContent += charArrDateLetter[currentIndexLetter];
-                    currentIndexLetter++;
-                }
-                else {
-                    clearInterval(intervalContent)
-                }
-            }, 50)
-        }, 6000)
-    })
-    $(".close").on("click", function () {
-        clearInterval(intervalContent)
-        document.querySelector(".title__letter").textContent = "";
-        text__letter.textContent = "";
-        currentIndexLetter = 0
-        currentIndexTitle = 0
-        document.querySelector("#heart__letter").classList.remove("animationOp");
-        document.querySelector(".love__img").classList.remove("animationOp");
-        document.querySelector("#mewmew").classList.remove("animationOp");
-        document.querySelectorAll(".heart").forEach((item) => {
-            item.classList.remove("animation")
-        })
-        $(".box__letter").slideUp();
-        $(".letter__border").slideUp();
-    })
+        $(".boxMail").addClass("active");
+    });
 
-
-
-    let mailBox = document.querySelector('.mail')
-    let boxmail = document.querySelector('.boxMail')
-    var close = document.querySelector('.fa-xmark')
-    mailBox.onclick = function () {
-        mailBox.classList.toggle('active')
-        boxmail.classList.add('active')
-    }
-
-    close.addEventListener('click', function () {
-        boxmail.classList.remove('active')
-    })
+    $(".fa-xmark").on("click", function () {
+        $(".boxMail").removeClass("active");
+    });
 </script>
 
 </html>
