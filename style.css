@@ -836,7 +836,7 @@ body {
 }
 .boxMail .boxMail-container{
     position: absolute;
-    width: 760px;
+    width: 720px;
     height: 560px;
     display: flex;
     margin: 0;
