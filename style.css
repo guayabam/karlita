@@ -836,12 +836,12 @@ body {
 }
 .boxMail .boxMail-container{
     position: absolute;
-    width: min(84vw, 760px);
-    height: min(68vh, 500px);
-    max-height: 500px;
+    width: min(88vw, 780px);
+    height: min(72vh, 520px);
+    max-height: 520px;
     display: flex;
     margin: 0;
-    transform: scale(0.9);
+    transform: scale(0.96);
     -webkit-perspective: 2000px;
     perspective: 2000px;
     transition: all 0.5s;
@@ -963,7 +963,7 @@ body {
     font-family: 'Indie Flower', cursive;
     padding: 0px 20px;
     text-indent: 20px;
-    font-size: clamp(12px, 1.7vw, 18px);
+    font-size: clamp(12.5px, 1.9vw, 18px);
     line-height: 1.45;
     opacity: 0;
 }
