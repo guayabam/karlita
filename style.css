@@ -836,8 +836,9 @@ body {
 }
 .boxMail .boxMail-container{
     position: absolute;
-    width: 810px;/*750px;*/
-    height: 560px;/*500px;*/
+    width: min(84vw, 760px);
+    height: min(68vh, 500px);
+    max-height: 500px;
     display: flex;
     margin: 0;
     transform: scale(0.9);
@@ -962,7 +963,8 @@ body {
     font-family: 'Indie Flower', cursive;
     padding: 0px 20px;
     text-indent: 20px;
-    font-size: 18px;
+    font-size: clamp(12px, 1.7vw, 18px);
+    line-height: 1.45;
     opacity: 0;
 }
 .boxMail .boxMail-container .card2:hover h2{
