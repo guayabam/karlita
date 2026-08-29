@@ -729,19 +729,19 @@ body {
     }
 
     .boxMail .boxMail-container {
-        width: min(68vw, 420px);
-        height: 380px;
+        width: min(76vw, 500px);
+        height: 430px;
         transform: scale(1);
     }
 
     .boxMail .boxMail-container .card2 h3 {
-        font-size: 20px;
-        padding-left: 40px;
+        font-size: 22px;
+        padding-left: 46px;
     }
 
     .boxMail .boxMail-container .card2 h2 {
-        font-size: 14px;
-        padding: 0 12px;
+        font-size: 15px;
+        padding: 0 14px;
         text-indent: 12px;
     }
 
