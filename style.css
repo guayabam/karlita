@@ -836,9 +836,8 @@ body {
 }
 .boxMail .boxMail-container{
     position: absolute;
-    width: min(76vw, 630px);
-    height: min(60vh, 440px);
-    max-height: 440px;
+    width: 810px;
+    height: 560px;
     display: flex;
     margin: 0;
     transform: scale(0.95);
@@ -865,7 +864,7 @@ body {
 }
 .boxMail .boxMail-container .card1 {
     position: absolute;
-    width: 48%;
+    width: 50%;
     height: 100%;
     background: linear-gradient(to right, #FF7882, #FF7882 63%);
     color: white;
@@ -876,7 +875,7 @@ body {
 }
 .boxMail .boxMail-container .card2{
     position: relative;
-    width: 48%;
+    width: 50%;
     height: 100%;
 }
 .boxMail-container .card1{
@@ -966,10 +965,9 @@ body {
 }
 .boxMail .boxMail-container .card2 h2{
     font-family: 'Indie Flower', cursive;
-    padding: 0px 12px;
-    text-indent: 12px;
-    font-size: clamp(10.5px, 1.3vw, 14.5px);
-    line-height: 1.35;
+    padding: 0px 20px;
+    text-indent: 20px;
+    font-size: 18px;
     opacity: 0;
 }
 .boxMail .boxMail-container .card2:hover h2{
