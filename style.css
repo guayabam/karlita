@@ -836,7 +836,7 @@ body {
 }
 .boxMail .boxMail-container{
     position: absolute;
-    width: 810px;
+    width: 760px;
     height: 560px;
     display: flex;
     margin: 0;
@@ -943,7 +943,7 @@ body {
     padding: 20px 0px 10px 60px;
     opacity: 0;
     visibility: hidden;
-    font-size: 25px;
+    font-size: 24px;
     text-shadow: 0 0 8px #FF7882;
 }
 .boxMail .boxMail-container .card2:hover h3{
@@ -967,7 +967,7 @@ body {
     font-family: 'Indie Flower', cursive;
     padding: 0px 20px;
     text-indent: 20px;
-    font-size: 18px;
+    font-size: 17px;
     opacity: 0;
 }
 .boxMail .boxMail-container .card2:hover h2{
